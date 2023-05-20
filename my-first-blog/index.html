@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GSoC'23 First Blog</title>
+    <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }        
+        
+        .header {
+            background-image: url('assets/img/hero-bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            padding: 20px;
+            width: 850px;            
+            margin: auto;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            font-weight: 451;            
+        }
+        
+        .post-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="position: absolute; left: 20px; top: 410px; font-family: 'Bad Script', sans-serif;">“All I can do is work hard! That’s the story of my life!”</h1>
+    </div>
+    
+    <div class="content">
+        <div class="post">
+            <h2 style="font-size: 27px;">GSoC '23: My Introduction to Open-Source Contribution</h1>
+            <p class="post-meta">Published on May 20, 2023</p>
+            
+            <div class="post-content">
+                <p style="font-size: 13pt; justify-content: space-evenly;">The Google Summer of Code served as my gateway to the vast and exciting world of open source. Well, why is open-source exciting? Because your contribution might change the way the world thinks and benefit millions of people across the globe. What's more exciting? Your PRs are public. People can come and see, "Oh, here's the PR. That's great." As my mentor Brent said, "It's super satisfactory unless you mess things up, which will also be public :3".</p>                
+                <h3>A little bit about Myself:</h3>
+                <p style="font-size: 13pt; justify-content: space-evenly;">Hey everyone, I'm Aritra, a senior pursuing my B.E. degree in Electrical Engineering at Jadavpur University. One year back, I used to be a competitive programmer with little knowledge of OOPS and DBMS and no knowledge of web development. And here I am today with only a little knowledge of web development added. <br>
+Besides, I spend my leisure time playing football, watching soccer matches (Real Madrid matches mostly), anime and reading mangas.
+<br>If you want to know me better, you might want to visit my <a href="https://www.linkedin.com/in/aritra-majumder-juee23/">LinkedIn profile</a>, <a href="">GitHub profile</a> or go through my <a href="../index.html">portfolio</a>. There you will find numerous ways to get in touch with me. I will be writing more blogs on GSoC, you can find them <a href="../index.html#services2">here</a>.
+<br>
+Enough introduction. It's time to share my GSoC acceptance experience. 
+</p>
+<br><br>
+                <img width="800px" src="assets/img/GSoC.svg" alt="Google Summer of Code">
+                <h3>Pre-GSoC period:</h3>
+                <p style="font-size: 13pt; justify-content: space-evenly;">Google Summer of Code programme has thousands of projects under hundreds of organizations from many countries. 
+I went through many mathematics or development-based projects under organizations like Git, Mathesar, Django, Postman, SymPy and SageMath. Finally, I chose around four projects from Mathesar, SymPy and Postman. Generally, it's better to go with projects that align with your tech stacks so that you can focus on contributing to the project. Some organizations (including Mathesar, the organization I applied for) generally ask for a PR (not necessarily merged) to consider you for GSoC. So, along with your proposal, PRs are also important. Remember this!
+</p>
+                <br><br><br>
+                <img width="800px" src="assets/img/mathesar.png" alt="Mathesar">
+                <br><br>
+                <h3>My Introduction to Mathesar:</h3>                
+                <p style="font-size: 13pt; justify-content: space-evenly;"> Once I selected the projects, it was time to understand the relevant part of the codebase and discuss it with the community (That's why it is called the "Community Bonding Period"). Where to find the discussion forum of the community? Generally, you should get a mailing list or(and) public communication channels of the organizations from the GSoC project page. 
+Mathesar's discussion forum was (is) super active. I joined Mathesar's public channel two weeks before the deadline to submit the proposals. Thanks to all the mentors and applicants, within a week, I was able to gain a little understanding of the relevant part of the codebase and API flows. One week later, my first PR got merged :-) After that, with a week in hand, I started writing proposals and finally submitted two proposals for two projects under Mathesar.
+<br>
+On the project announcement day, I got two rejection emails from Google (Due to some bugs, applicants were getting multiple rejection emails, and I thought both my proposals had been rejected). I was a little sad until Kriti told me I was indeed selected and should wait a bit. Soon, I received the acceptance mail from Google :-)
+</p>
+                <h3>An overview of my project, Add more Summarization Functions:</h3>                
+                <p style="font-size: 13pt; justify-content: space-evenly;"> An overview of my project, Add more Summarization Functions: 
+So, Mathesar is a tool aiming to deliver database assets to non-technical personnel. When it comes to data, analysis and inference are of utmost importance. Summarization functions serve the exact purpose. To get a very brief overview of data, we use mean. To get the most frequent term, we use mode. For measuring precision, we use standard deviation. Similarly, the median gives a better central overview when there are outliers. But, they are super common and mainly used when data are numeric. 
+<br>
+Let's take an array of words. What summarizations might be helpful? Word count (counting the most frequent word, ranking them based on frequency) might be a good summarization function. But words like 'is', 'of' and 'the' are very frequent but not informative. Text ranking based on TF-IDF (Term Frequency-Inverse Document Frequency) might be the better choice. 
+<br>
+While summarizing JSON columns, the union of keys, keys and values and the intersection of keys might be good summarization functions.
+<br>
+Similarly, while summarizing time, modular arithmetic will be an obvious choice. Merging an array column to get a single array will be a good summarization function as well.
+<br>
+I will be working on adding such summarization functions to UI this summer. If you have some unique ideas for summarization functions, please ping me. If relevant, I will discuss them with my mentors, Brent and Sean and see if we can implement them.
+</p>
+                                <h3>Thanksgiving:</h3>                
+                <p style="font-size: 13pt; justify-content: space-evenly;"> All of these wouldn't be possible without the support of my parents, friends and teachers. I'm thankful to them.
+<br>                    
+I am immensely grateful to Srirupa for introducing me to GSoC and supporting me throughout the community bonding period. She will be contributing to Krita this summer (Check out her blog <a href="https://srirupa19.github.io/gsoc/2023/05/14/first_post.html">here</a>).
+<br>
+And lastly, I would like to thank all the mentors and applicants of the Mathesar organization for their constant support, Dominykas for relentlessly reviewing our draft proposals and Sean for all the appreciation and encouragement I received from him.</p>
+
+                    <br><br>
+                    <a href="https://www.youtube.com/watch?v=-AwYcE5LmHQ" target="_blank" rel="noopener noreferrer">
+                        <img width="800px" src="assets/img/unstoppable.jpg" alt="Mikasa">
+                    </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
