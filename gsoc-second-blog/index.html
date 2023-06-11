@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GSoC'23 Second Blog</title>
+    <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }        
+        
+        .header {
+            background-image: url('assets/img/hero-bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            padding: 20px;
+            width: 850px;            
+            margin: auto;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            font-weight: 451;            
+        }
+        
+        .post-meta {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        .center {            
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="position: absolute; right: 20px; top: 410px; font-family: 'Bad Script', sans-serif;">“Dattebayo! Nothing is beyond your ability!”</h1>
+    </div>    
+    <div class="content">
+        <div class="post">
+            <h2 style="font-size: 27px;">GSoC '23: Add More Summarization Functions</h1>
+            <p class="post-meta">Published on June 11, 2023</p>            
+            <div class="post-content">
+                <p style="font-size: 13pt; justify-content: space-evenly;">                    
+                    Hey everyone, I'm Aritra, a senior pursuing my B.E. degree in Electrical Engineering at Jadavpur University. This summer, I will work on adding more summarization functions to Mathesar UI as a part of GSoC 2023. I have shared my GSoC acceptance experience in my first blog (In case you have missed that, here is the <a href="../my-first-blog/">link</a> to the same). In this blog, I will share more about the project and my progress till now.
+                    <br>
+                    Here is my <a href="https://www.linkedin.com/in/aritra-majumder-juee23/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>, <a href="https://github.com/Aritra8438" target="_blank" rel="noopener noreferrer">GitHub profile</a> and <a href="../index.html">portfolio</a>. There you will find numerous ways to get in touch with me. I will be writing more blogs on my GSoC experience, you can find them <a href="../index.html#blogs" target="_blank" rel="noopener noreferrer">here</a>.
+                </p>                
+                <hr>
+                <h3>What are summarization functions?</h3>                
+                <p style="font-size: 13pt; justify-content: space-evenly;">
+                    In the context of databases, summarization functions, also known as aggregate functions, are used to calculate and return a summary (sum, mean, median, array aggregation etc.) of some columns based on a Grouping column.
+                    <br>Let's say we have this table:
+                    <div class="center">
+                        <table>
+                            <colgroup>
+                                <col span="1" style="width: 30%;">
+                                <col span="1" style="width: 30%;">
+                                <col span="1" style="width: 20%;">
+                                <col span="1" style="width: 20%;">                            
+                            </colgroup>                        
+                            <tr>
+                                <th>Players</th>
+                                <th>Level</th>
+                                <th>Matches</th>
+                                <th>Goals</th>
+                            </tr>
+                            <tr>
+                                <td>C. Ronaldo</td>
+                                <td>International</td>
+                                <td>198</td>
+                                <td>122</td>
+                            </tr>
+                            <tr>
+                                <td>L. Messi</td>
+                                <td>International</td>
+                                <td>174</td>
+                                <td>102</td>
+                            </tr>
+                            <tr>
+                                <td>L. Messi</td>
+                                <td>Club</td>
+                                <td>853</td>
+                                <td>704</td>
+                            </tr>
+                            <tr>
+                                <td>C. Ronaldo</td>
+                                <td>Club</td>
+                                <td>968</td>
+                                <td>715</td>
+                            </tr>
+                        </table>                    
+                    </div>
+                    Now we want to calculate the total number of matches and goals scored by each player. How do we do that?<br>
+                    If we know of DBMS and SQL, it's fairly simple:
+                    <pre class="center"><code>
+                SELECT
+                    SUM(Matches), 
+                    SUM(Goals) 
+                FROM table
+                GROUP BY
+                    Players
+                    </code></pre>                
+                    Where <b>SUM()</b> is an aggregate function.
+                    Similarly, <b>Pivot table</b> in Excel gives us access to similar feature. <br><br>
+                    Here are different aggregate functions available in <a href="https://learn.microsoft.com/en-us/sql/t-sql/functions/aggregate-functions-transact-sql?view=sql-server-ver16">T-SQL</a>, <a href="https://www.postgresql.org/docs/9.5/functions-aggregate.html">PostgreSQL</a> and <a href="https://support.microsoft.com/en-us/office/aggregate-function-43b9278e-6aa7-4f17-92b6-e19993fa26df">Excel.</a>
+                </p>
+                <hr>
+                <h3> <a href="https://mathesar.org/">Mathesar</a> - Get more control over database</h3>
+                <p style="font-size: 13pt; justify-content: space-evenly;">
+                    Mathesar is a project that aims to deliver database assets to non-technical personnel. A person with no previous knowledge of DBMS and Excel should be able to summarize data using intuitive and user-friendly Mathesar UI, which is our goal. Mathesar currently supports <b>count</b> and <b>distinct_array_to_agg</b> aggregates, and my mentors <a href="https://github.com/mathemancer">Brent</a> and <a href="https://github.com/seancolsen">Sean</a> (and me :3) will work on adding more summarization functions to Mathesar UI this summer.
+                    If you are interested in exploring the related feature requests and pull requests, here is the link to the <a href="https://github.com/centerofci/mathesar/issues/2917">meta</a> issue. <br>
+                    Following is a video describing the newly implemented sum function. (full-screen mode recommended)                    
+                </p>
+                <br>
+                <div class="center">
+                    <video width="400" height="300" controls>
+                        <source src="assets/videos/Sum-function.mp4" type="video/mp4">
+                    </video>                
+                </div>
+                <hr>
+                <h3>What I have learnt:</h3>                
+                <p style="font-size: 13pt; justify-content: space-evenly;"> 
+                    While working on this project, I have learnt sooo... many things (only two weeks have passed). Why should I expect less from such a collaborative community? 
+                    <br>Though the project stack mentions front-end, backend and database, my project is more related to the backend (Django) and database (PostgreSQL and SQLAlchemy). During the implementation of aggregate functions, I had to study those functions as well as the current workflow of Mathesar APIs. Moreover, I am getting more familiar with TypeScript and Svelte.
+                    <br>Besides, Git is one of the most popular VCSs and is super-important when it comes to contributing to open-source. So, Sean and Brent explained to me some concepts of Git (like rebasing, stacking of PRs etc.) and showed me how they manage so many branches and PRs with Git. Those sessions helped me a lot.
+                </p>
+                <br><br>
+                <div class="center">
+                    <a href="https://www.youtube.com/watch?v=YyyEwmTwloA" target="_blank" rel="noopener noreferrer">
+                        <img width="500px" src="assets/img/Hall-of-fame-2.jpg" alt="Nishinoya">
+                    </a>
+                </div>                
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+
+
