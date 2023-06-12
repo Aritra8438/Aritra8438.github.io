@@ -136,12 +136,13 @@
                     Now we want to calculate the total number of matches and goals scored by each player. How do we do that?<br>
                     If we know of DBMS and SQL, it's fairly simple:
                     <pre class="center"><code>
-                SELECT
-                    SUM(Matches), 
-                    SUM(Goals) 
-                FROM table
-                GROUP BY
-                    Players
+            SELECT
+                Players,
+                SUM(Matches) as Total_matches, 
+                SUM(Goals) as Total_goals,
+            FROM table
+            GROUP BY
+                Players
                     </code></pre>                
                     Where <b>SUM()</b> is an aggregate function.
                     Similarly, <b>Pivot table</b> in Excel gives us access to similar feature. <br><br>
