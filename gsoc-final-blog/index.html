@@ -1,0 +1,274 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSoC'23 Second Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/haikyuu1.png");
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+      }
+
+      .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          position: absolute;
+          left: 20px;
+          top: 510px;
+          font-family: 'Bad Script', sans-serif;
+          color: black;
+        "
+      >
+        “Feel rage, focus, fight, win and move forward”
+      </h1>
+    </div>
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">GSoC '23: Thanks for Everything</h2>
+        <p class="post-meta">Published on August 20, 2023</p>
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hey, I'm Aritra, a sophomore pursuing my Master's degree in Computer
+            Science at Chennai Mathematical Institute. I am contributing to
+            Mathesar as part of GSoC'23, my project is to "
+            <a
+              href="https://github.com/centerofci/mathesar/issues/2917"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add more summarization functions</a
+            >
+            ". In this blog, I will share my work and GSoC experience with my
+            organization. <br />Here is my
+            <a
+              href="https://www.linkedin.com/in/aritra-majumder-juee23/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn profile</a
+            >,
+            <a
+              href="https://github.com/Aritra8438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub profile</a
+            >
+            and <a href="../index.html">portfolio</a>. There, you will find
+            numerous ways to get in touch with me. I will be writing more blogs
+            on my future journeys; you can find them
+            <a
+              href="../index.html#blogs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >.
+          </p>
+          <hr />
+          <h3>Project Synopsis:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The aim of my project was to add more aggregation functions to the
+            Mathesar UI, which will let users easily aggregate data based on a
+            grouping column. Here is a list of different aggregation functions
+            that we have added to the UI. (Click on the images to visit the
+            issues)
+            <br />
+            <a href="https://github.com/centerofci/mathesar/issues/2917"
+              ><img src="./assets/img/meta-issue.png" alt="meta issue" />
+            </a>
+            <br />
+            Apart from them, I have worked on fixing some regression bugs
+            related to the summarization.
+            <br /><br />
+            <a href="https://github.com/centerofci/mathesar/issues/2962"
+              ><img src="./assets/img/fix-bugs.png" alt="meta issue" />
+            </a>
+          </p>
+          <div style="font-size: 13pt; justify-content: space-evenly">
+            Here are explanations of some of the summarization functions we
+            added: <br />
+            <ol>
+              <li>
+                <a href="https://github.com/centerofci/mathesar/pull/2893"
+                  >Support for sum aggregation function while summarizing
+                  columns:</a
+                >
+                <br />
+                In this PR, I have added the sum summarization function. Well,
+                what does that mean?
+                <a
+                  href="https://user-images.githubusercontent.com/64671908/241967422-62e6e419-6731-457f-974e-df6b33ced3eb.mp4"
+                  >Here</a
+                >
+                is a video that explains how it works. In short, If you have a
+                grouping column and a column you want to aggregate (or calculate
+                the sum of), then this summarization function will result in a
+                table containing the groups and their sums. Let's assume, We
+                have a table which has columns: player's name, Year, Goals
+                scored in that year. Now, we want to calculate how many goals
+                each player scored throughout his journey. It's easy now, right?
+                Just add players as grouping columns and years as summarization
+                columns.
+              </li>
+              <li>
+                <a href="https://github.com/centerofci/mathesar/pull/2932"
+                  >Add median aggregation function:</a
+                >
+                <br />
+                In this PR, I have added the median summarization functions. How
+                is median defined? If you give an ordered array, median is the
+                middle element of the array after sorting.
+              </li>
+              <li>
+                <a href="https://github.com/centerofci/mathesar/pull/2981"
+                  >Add Peak Time aggregation function:</a
+                >
+                <br />
+                In this PR, I have added the peak time summarization functions.
+                Now, what is peak time? - Modular average of time? How is this
+                different from the average? Well, time is cyclic and if two
+                events happen at 11:59 pm and 12:01 am, you would not expect the
+                average time to be 12:00 pm, right? Rather 12:00 am is a good
+                candidate.
+                <a href="https://aritra8438.github.io/gsoc-third-blog/">Here</a>
+                is a blog that explains the modular average.
+                <a
+                  href="https://user-images.githubusercontent.com/64671908/249879985-193b11e9-a4b0-445d-8cb0-c746630d5041.png"
+                  >Here</a
+                >
+                is the result of such a summarization.
+              </li>
+            </ol>
+            I have explained part of the project through my blogs, here are the
+            links:
+            <ul>
+              <li>
+                <a href="https://aritra8438.github.io/my-first-blog/">
+                  Blog 1</a
+                >
+              </li>
+              <li>
+                <a href="https://aritra8438.github.io/gsoc-second-blog/">
+                  Blog 2</a
+                >
+              </li>
+              <li>
+                <a href="https://aritra8438.github.io/gsoc-third-blog/">
+                  Blog 3</a
+                >
+              </li>
+            </ul>
+            Here are some of the future works, that I will try to follow up:
+            <ul>
+              <li>Add support for multiple grouping columns.</li>
+              <li>Add support for preprocessing of summarized columns.</li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <h3>Again a thanksgiving:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            While working on this project, I have learnt a lot. With Brent and
+            Sean's guidance, nothing felt too challenging. Thanks to Dom,
+            Mukesh, Pavish, Rajat, Ghislaine, Anish and my co-interns Maria,
+            Varsha and Anshuman for helping me in the project and answering all
+            my doubts. Lastly, a special thanks to Kriti for managing this
+            wonderful organization.
+            <br />All the meetings with Brent and Sean, they were super helpful
+            to me, I have gained in-depth knowledge of Git, Django and Postgres.
+            Those community events, where we played different multiplayer games,
+            I will miss them for sure. <br />
+            <strong
+              >So, thank you Mathesar and Google. I'm glad to be a part of such
+              a great programme.</strong
+            >
+          </p>
+          <br /><br />
+          <div class="center" style="width: 100%">
+            <a
+              href="https://www.youtube.com/watch?v=8zyKtE9SBgM&ab_channel=AniMathinaRush"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img width="100%" src="assets/img/Shoyo.webp" alt="Hinata" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
