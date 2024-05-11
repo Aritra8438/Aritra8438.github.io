@@ -1,0 +1,357 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSoC'24 First Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/hero-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 650px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      ul {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+      }
+
+      .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          position: absolute;
+          left: 20px;
+          top: 0px;
+          font-family: 'Bad Script', sans-serif;
+          color: white;
+        "
+      >
+        “Fight till death”
+      </h1>
+    </div>
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">
+          Google Summer of Code '24: My introduction to OmegaUp
+        </h2>
+        <p class="post-meta">Published on May 11, 2024</p>
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hey everyone, I'm Aritra, a sophomore pursuing an M.Sc. degree in
+            Computer Science at CMI. This summer, I am working on migrating the
+            <a
+              href="https://mau-md.github.io/Omegaup-CDP/#/creator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >unofficial CDP</a
+            >
+            to the official site of OmegaUp (<a
+              href="https://omegaup.com/problem/creator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >) as a part of GSoC 2024. I also participated in GSoC '23 with
+            Mathesar, you can find the related blogs
+            <a href="..#blogs">here</a>. In this blog, I will share my GSoC
+            acceptance experience with OmegaUp. <br />
+          </p>
+          <h3>A little bit about Myself:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            I love Mathematics and Algorithms. My favorite subject is Complexity
+            theory. Besides, I spend my leisure time playing football, watching
+            soccer matches, enjoying anime and reading manga. I also (less
+            frequently) contribute to the open-source repositories.
+            <br />If you want to know me better, you might want to visit my
+            <a
+              href="https://www.linkedin.com/in/aritra-majumder-juee23/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn profile</a
+            >,
+            <a
+              href="https://github.com/Aritra8438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub profile</a
+            >
+            or go through my <a href="../index.html">portfolio</a>. There you
+            will find numerous ways to get in touch with me. I will write more
+            blogs on GSoC '24, you can find them
+            <a
+              href="../index.html#blogs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >.
+            <br />
+            Phew! Enough introduction. It's time to share my GSoC acceptance
+            experience again.
+          </p>
+
+          <br /><br />
+          <img
+            width="800px"
+            src="assets/img/GSoC.svg"
+            alt="Google Summer of Code"
+          />
+          <br /><br />
+          <h3>Pre-GSoC period:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            When I planned on applying for GSoC this year, it was already a bit
+            late. While browsing through the organizations, I selected some of
+            them (that aligned with my interest) like OmegaUp, Keploy and Oppia
+            to start contributing. After going through the selection criteria of
+            OmegaUp, I was a bit amazed as it required the candidates to attend
+            a programming contest first. An applicant needed to solve 2 out of 3
+            problems to be eligible for further rounds.
+          </p>
+          <ul>
+            <li>
+              Round 1: Solve 2 out of 3 in a
+              <a
+                href="https://omegaup.com/arena/gsoc2024-ext/#problems"
+                target="_blank"
+                rel="noopener noreferrer"
+                >programming contest</a
+              >
+              :3
+            </li>
+            <li>Round 2: A Merged PR.</li>
+            <li>Round 3: Writing a (good) proposal.</li>
+            <li>Round 4: Interview, yay!</li>
+          </ul>
+          Transparent and crisp selection procedure, isn't it? I liked it too.
+          <br /><br />
+          <div class="center">
+            <img width="400px" src="assets/img/omegaup.png" alt="OmegaUp" />
+          </div>
+          <h3>My Introduction to OmegaUp:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            My first introduction to OmegaUp was through the
+            <a
+              href="https://discord.gg/PAw4Pgejcv"
+              target="_blank"
+              rel="noopener noreferrer"
+              >official discord server</a
+            >
+            of OmegaUp. The channels were (are) super-active and
+            contributor-friendly. From the very beginning (setting up OmegaUp
+            dev env) to the selection process, the admins and the candidates
+            helped me a lot.
+            <br />
+            The contest was pretty interesting. I initially managed to solve two
+            questions (1st and 3rd), though out of interest, I solved the 2nd
+            one later. After clearing the first round, I started trying to
+            contribute to the codebase. There were many good first issues to
+            start with and maintainers were super helpful in assigning us the
+            perfect one. After 3 of my PRs were merged, I started writing
+            proposal. Once I have written a draft proposal, I've submitted it to
+            the mentors for review to get their feedback. After some days of
+            waiting, I received an email requiring me to schedule an interview.
+            Carlos and Juan took my interview (which lasted for 45 minutes) and
+            asked me some non-technical and 2 technical (development-related)
+            questions.
+            <br />
+            One more thing, PRs not only make you eligible for selection but
+            also give you a greater understanding of the codebase, which will
+            help you later anyway. So my suggestion will be to work on solving
+            as many issues as possible.
+            <a
+              href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3AAritra8438+sort%3Aupdated-desc+is%3Amerged"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Here</a
+            >
+            are my PRs, that are already merged.
+          </p>
+          <div class="center">
+            <img width="400px" src="assets/img/CDP.gif" alt="OmegaUp" />
+          </div>
+          <h3>An overview of my project:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            So, what is OmegaUp?
+            <i
+              >omegaUp is a non-profit organization (501c3) aimed to increase
+              the number of talented Software Engineers in Latin America.</i
+            >
+            <br />
+
+            OmegaUp had 5-6 projects related to the online judge of OmegaUp.
+            Among those, I chose the
+            <a
+              href="https://github.com/omegaup/omegaup/wiki/Google-Summer-of-Code-2024#migrate-problem-creator-to-vuejs--typescript"
+              target="_blank"
+              rel="noopener noreferrer"
+              >migration of the CDP</a
+            >
+            project as I personally had difficulty using the unofficial CDP. You
+            can find the official announcement
+            <a
+              href="https://summerofcode.withgoogle.com/programs/2024/projects/tEAcN96u"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >. Also,
+            <a
+              href="https://docs.google.com/document/d/1mDAgJrRp-uuXMRb5-KJnjlM7UUAlo9Bv9673sXozMEc/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >
+            is the proposal that I submitted and will use throughout the
+            project.
+            <br />
+            One of the main components of the OmegaUp platform is the
+            competitive programming online judge. An online judge has 3 main
+            components: problem, code and the verdict of the code on that
+            problem. Currently, to create a problem on OmegaUp, we have to rely
+            on the zip file that can be created through the expertise of the
+            problem creators (which makes it difficult for the new users ) or
+            via the unofficial CDP. The Github repo that deployed the site is
+            public and now a Public Archive. So, it can’t be an official tool
+            for OmegaUp. Moreover,
+          </p>
+          <ul>
+            <li>
+              If a user finds a bug on the website, as it’s a public archive,
+              it’s not possible to make a pull request.
+            </li>
+            <li>No newer feature can be added to the website.</li>
+            <li>
+              The fate of the site largely depends on the author's availability.
+            </li>
+          </ul>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Currently, after a problem is created, if we need to modify the
+            same, we need to again upload the zip file to the CDP, modify it and
+            upload the modified zip file on the problem-edit page on OmegaUp.
+            <br />
+            Enabling users to directly generate a problem (without generating
+            the intermediate zip file) may help a lot of users and make the edit
+            problem action much easier and intuitive.
+            <br />
+            So, the motivation behind this project is migrating the whole CDP to
+            the OmegaUp website. This project aims to make the OmegaUp problem
+            creation easier, more intuitive and more versatile as well as
+            backwards-compatible.
+          </p>
+          <h3>Thanksgiving:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            All of these wouldn't be possible without the support of my parents,
+            friends and teachers. Thanks to Nandini for never letting me lose my
+            hope. I'm thankful to them.
+            <br />
+            I am immensely grateful to Juan for such good mentoring. With every
+            comment and suggestion of him in my PRs, I have learnt a lot. He
+            assigned me some of the issues which gave me an in-depth
+            understanding of the codebase.
+            <br />
+            Carlos was super helpful during my interview. There were a lot of
+            bad things that happened in the interview (my VSCode got uninstalled
+            at the very beginning) and Carlos supported me throughout. With
+            every question, he mentioned the answer he was expecting.
+            <br />
+            I would also like to thank Hugo and Vanessa for reviewing and
+            merging my PRs. Lastly, I would like to thank all the mentors and
+            applicants (specifically Ahmed and Kartik) of the OmegaUp
+            organization for their constant support.
+          </p>
+
+          <hr />
+
+          <br /><br />
+          <div class="center" style="width: 50%">
+            <a
+              href="https://youtu.be/48ArCzfwivY?si=Qpe3Cre13dBY3S2w"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                width="850px"
+                src="assets/img/legends-never-die.jpg"
+                alt="League ofLegends"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
