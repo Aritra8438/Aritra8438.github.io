@@ -1,0 +1,305 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSoC'24 Second Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/hero-bg.jpeg");
+        background-size: cover;
+        background-position: center;
+        height: 530px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      ul {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+      }
+
+      .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          position: absolute;
+          right: 20px;
+          top: 0px;
+          font-family: 'Bad Script', sans-serif;
+          color: white;
+        "
+      >
+        “We’ll show them, we'll show them all.”
+      </h1>
+    </div>
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">
+          Google Summer of Code '24: Migration of CDP
+        </h2>
+        <p class="post-meta">Published on August 3, 2024</p>
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hey everyone, I'm Aritra, a junior pursuing an M.Sc. degree in
+            Computer Science at CMI. This summer, I am working on migrating the
+            <a
+              href="https://mau-md.github.io/Omegaup-CDP/#/creator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >unofficial CDP</a
+            >
+            to the official site of OmegaUp (<a
+              href="https://omegaup.com/problem/creator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >) as a part of GSoC 2024. <br />
+            Before reading the blog, you might want to go through the
+            <a href="../gsoc24-first-blog/">first blog</a> of GSoC '24. also
+            participated in GSoC '23 with Mathesar, you can find the related
+            blogs <a href="..#blogs">here</a>. <br />In this blog, I will share
+            about the project and our (<a
+              href="https://github.com/carlosabcs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Carlos</a
+            >,
+            <a
+              href="https://github.com/pabo99"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Juanpa</a
+            >
+            and I) progress on the project.<br />
+          </p>
+          <h3>A little bit about Myself:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            I love Mathematics and Algorithms. This semester, I will be
+            exploring Cryptography and Advanced Machine Learning. If you want to
+            know me better, you might want to visit my
+            <a
+              href="https://www.linkedin.com/in/aritra-majumder-juee23/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn profile</a
+            >,
+            <a
+              href="https://github.com/Aritra8438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub profile</a
+            >
+            or go through my <a href="../index.html">portfolio</a>. There you
+            will find numerous ways to get in touch with me. I will write more
+            blogs on GSoC '24, you can find them
+            <a
+              href="../index.html#blogs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >.
+            <br />
+            You may click on the images to visit the issues/pages. Let's dive
+            into the project details.
+          </p>
+
+          <br /><br />
+          <a
+            href="https://omegaup.com/problem/creator/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img width="800px" src="assets/img/cdp.png" alt="The CDP page"
+          /></a>
+          <br /><br />
+          <h3>What is the CDP:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            CDP stands for <b>Creador de Problemas</b> in Spanish which
+            translates to <b>Problem Creator</b>. This interactive component
+            aims to reduce the complexity to create a problem for OmegaUp
+            platform. Previously,
+            <a
+              href="https://github.com/Mau-MD"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Mau</a
+            >
+            implemented the
+            <a
+              href="https://mau-md.github.io/Omegaup-CDP/#/creator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >unofficial CDP</a
+            >
+            to help users create a problem. He also started the
+            <a
+              href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3AMau-MD+%3A%5BProblem+creator%5D+"
+              target="_blank"
+              rel="noopener noreferrer"
+              >project</a
+            >
+            to make it a part of official omegaUp site.
+            <br />Now, if we want to write a problem, we typically need to
+            create zip file following
+            <a
+              href="https://github.com/omegaup/omegaup/wiki/C%C3%B3mo-escribir-problemas-para-Omegaup"
+              target="_blank"
+              rel="noopener noreferrer"
+              >this</a
+            >
+            with some required folders that contains the problem markdown,
+            solution markdown and the test cases. The CDP will abstract the zip
+            file creation and just require you to write the markdowns and the
+            test cases.
+          </p>
+          <a
+            href="https://github.com/omegaup/omegaup/issues/7597"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="assets/img/test-case-tab.png" alt="Test cases tab Issue"
+          /></a>
+          <h3>What I have learnt:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Over the past two months, I've learned a lot thanks to the
+            collaborative community I'm part of. Most of my work is focused on
+            frontend for now. Implementing the CDP, it required me to study the
+            codebase in depth, along with the previous PRs of Mau. Additionally,
+            I'm becoming more proficient with
+            <a
+              href="https://bootstrap-vue.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Bootstrap Vue</a
+            >
+            and
+            <a
+              href="https://test-utils.vuejs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Vue test utils.</a
+            >
+            You will find all of my merged PRs
+            <a
+              href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3AAritra8438+sort%3Aupdated-desc+is%3Amerged"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >.
+          </p>
+          <video width="840" height="630" controls>
+            <source src="assets/vid/omegaup-cdp-demo.mp4" type="video/mp4" />
+          </video>
+          <div class="center"></div>
+          <h3>Towards the second phase:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Thanks to Carlos and Juanpa for their excellent guidance throughout.
+            The CDP page still needs a lot of improvement before it can be
+            officially deployed. The pending tasks are:
+          </p>
+          <ul>
+            <li>To add layout sidebar.</li>
+            <li>
+              To complete the working of download and upload the zip file.
+            </li>
+            <li>to write e2e cypress tests.</li>
+          </ul>
+          <p>
+            Soon, I will write the next blog when the CDP would be
+            fully-functional. Goodbye till then! <br />
+            (If you are curios, the character in the background is
+            <b>Kurapika</b> from Hunter x Hunter, and the quote was by
+            <b>Silco</b> to <b>Jinx</b> in Arcane)
+          </p>
+          <hr />
+          <div class="center" style="width: 50%">
+            <a
+              href="https://youtu.be/97xf5DXyXqg?si=5m7ZaxSU8x0HNSiu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                width="850px"
+                src="assets/img/levi-natural.png"
+                alt="League ofLegends"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
