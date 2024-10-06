@@ -1,0 +1,494 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSoC'24 Final Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/hero-bg.png");
+        background-size: cover;
+        background-position: center;
+        height: 530px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      ul {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+      }
+
+      .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          position: absolute;
+          left: 10px;
+          top: 0px;
+          font-family: 'Bad Script', sans-serif;
+          color: white;
+        "
+      >
+        “You Are Weak Because You Don't Have Enough Hate”
+      </h1>
+    </div>
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">
+          Google Summer of Code '24: Wrapping Up the Project
+        </h2>
+        <p class="post-meta">Published on October 6, 2024</p>
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hey everyone, I'm Aritra, a senior pursuing an M.Sc. degree in
+            Computer Science at CMI. This summer, I am working on migrating the
+            <a
+              href="https://mau-md.github.io/Omegaup-CDP/#/creator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >unofficial CDP</a
+            >
+            to the official site of OmegaUp (<a
+              href="https://omegaup.com/problem/creator/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >) as a part of GSoC 2024. <br />
+            Before reading the blog, you might want to go through the
+            <a
+              href="../gsoc24-first-blog/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >first blog</a
+            >
+            and the
+            <a
+              href="../gsoc24-second-blog/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >second blog</a
+            >
+            of GSoC '24. I also participated in GSoC '23 with Mathesar, you can
+            find the related blogs <a href="..#blogs">here</a>. <br />In this
+            blog, I will share the final progress till now and the future
+            plans.<br />
+          </p>
+
+          <h3>A little bit about Myself:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            I love Mathematics and Algorithms. This semester, I am exploring
+            Cryptography and Advanced Machine Learning. If you want to know me
+            better, you might want to visit my
+            <a
+              href="https://www.linkedin.com/in/aritra-majumder-juee23/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn profile</a
+            >,
+            <a
+              href="https://github.com/Aritra8438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub profile</a
+            >
+            or go through my <a href="../index.html">portfolio</a>. There you
+            will find numerous ways to get in touch with me. I will write more
+            blogs on GSoC '24, you can find them
+            <a
+              href="../index.html#blogs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >here</a
+            >.
+            <br />
+            <br />
+          </p>
+          <h3>The Project:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Please click on the images/videos to visit the issues/pull requests.
+            You might want to go through my
+            <a
+              href="../gsoc24-second-blog/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >previous blog</a
+            >
+            for better understanding. <br />Let's dive into the project
+            analysis.
+          </p>
+          <a
+            href="https://github.com/omegaup/omegaup/issues/7586"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              width="800px"
+              src="assets/img/meta-tracker.png"
+              alt="The CDP page"
+          /></a>
+          <br /><br />
+
+          <h3>The Problem Statement and the Solution tab:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The problem statement and solution tab allows users to write the
+            problem statement and the solution respectively. The markdown
+            written in those pages will appear in the problem's statement and
+            the solution.
+            <br />
+            The problem statement uses the <b>Pagedown</b> editor and on saving
+            (clicking on th save button) directly updates the store. Here is the
+            video demo of the feature. Click on it to go to the pull request.
+          </p>
+          <div class="video-container">
+            <a
+              href="https://github.com/omegaup/omegaup/pull/7607"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <video width="600" height="450" controls>
+                <source
+                  src="https://github.com/omegaup/omegaup/assets/64671908/049bccc2-f6d9-41b6-b801-961cacec625f"
+                  type="video/mp4"
+                /></video
+            ></a>
+          </div>
+          <br />
+          <h3>The Problem Code tab:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The problem code tab allows users to upload the intended solution
+            code for the problem. While it doesn't have any direct applications
+            now, we might add some features like auto-calculating outputs from
+            the inputs on the test-cases tab. The tab supports uploading file
+            and then infer the language based on extension. Besides, user may
+            select the language and then write the code in the
+            <b>Codemirror</b> editor. <br />
+            Here is the demo video from the pull request. (Again, click on the
+            video to visit the pull request.)
+          </p>
+          <div class="video-container">
+            <a
+              href="https://github.com/omegaup/omegaup/pull/7632"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <video width="600" height="450" controls>
+                <source
+                  src="https://github.com/omegaup/omegaup/assets/64671908/a3bdcca3-bcaf-4899-8007-67517d6b07f7"
+                  type="video/mp4"
+                />
+              </video>
+            </a>
+          </div>
+          <br />
+          <h3>The Test cases tab:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The test-cases tab is the main and the most complex part of the
+            problem creator. It has multiple features including grouping cases
+            and using case layouts. Grouping is a way of organizing test cases
+            into different categories. While creating a problem, <b>easy</b> and
+            <b>hard</b> might be two common groups.
+          </p>
+          <ol>
+            <li>
+              <b>Sidebar:</b> The sidebar allows user to centrally control all
+              the test cases and the groups. User can view, edit, delete and
+              download groups and cases from the sidebar.
+              <div class="video-container">
+                <a
+                  href="https://github.com/omegaup/omegaup/pull/7659"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <video width="600" height="450" controls>
+                    <source
+                      src="https://github.com/omegaup/omegaup/assets/64671908/6518d503-242e-4b8f-ad45-56c843b1189d"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
+              </div>
+            </li>
+            <br /><br />
+            <li>
+              <b>Case edit tab:</b> This tab allows you to edit a case i.e.
+              adding or modifying lines and add case output. A case consists of
+              lines which might be a single line, multiline, array and matrix.
+              Arrays and matrices gives users a nice abstraction over lines and
+              multiline by allowing users to decide sizes, ranges and uniqueness
+              of array/matrix elements.
+              <div class="video-container">
+                <a
+                  href="https://github.com/omegaup/omegaup/pull/7716"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <video width="600" height="450" controls muted>
+                    <source
+                      src="https://github.com/user-attachments/assets/487409cb-7976-4137-9d47-2d267b6fe4b8"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
+              </div>
+            </li>
+            <br /><br />
+            <li>
+              <b>Layout bar:</b> Layout is a useful tool to save the formats of
+              the test cases. Once saved, users can enforce this layout to
+              multiple test cases. Layout bar allows users to modify, rename,
+              copy and delete layouts.
+              <div class="video-container">
+                <a
+                  href="https://github.com/omegaup/omegaup/pull/7754"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <video width="600" height="450" controls muted>
+                    <source
+                      src="https://github.com/user-attachments/assets/4cefbfb3-6518-49ea-a7b4-7191ebc7514d"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
+              </div>
+            </li>
+          </ol>
+          There are many other important features that are added to the test
+          cases tab, you might want to refer to the test cases section of the
+          meta issue to find out more.
+          <br />
+          <h3>The zip file creation:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Currently, the only way to add a problem to the omegaUp server is to
+            create a zip file. So, after users are done with the problem
+            creation, they can download the zip file to upload the problem to
+            the omegaUp server. Also, users can further modify the problem by
+            re-uploading the zip file to the problem creator page.
+          </p>
+          <ol>
+            <li>
+              <b>Downloading the zip file:</b> To upload a problem (written from
+              scratch) in omegaUp, one should follow the following
+              <a
+                href="https://github.com/omegaup/omegaup/wiki/Generaci%C3%B3n-Manual-de-Archivo-.zip-para-Problemas"
+                target="_blank"
+                rel="noopener noreferrer"
+                >manual</a
+              >. The problem creator page provides an abstraction over this to
+              improves user experience. After creating the problem using the
+              problem creator page, the user can download the problem to upload
+              it to omegaUp server.
+              <div class="video-container">
+                <a
+                  href="https://github.com/omegaup/omegaup/pull/7702"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <video width="600" height="450" controls>
+                    <source
+                      src="https://github.com/user-attachments/assets/c7fbcad6-bf58-4a2d-8bd3-7a1c04677de3"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
+              </div>
+            </li>
+            <br />
+            <li>
+              <b>Uploading the zip file:</b> Similarly, if the user wants to
+              further modify the problem statement, he/she can re-upload the
+              problem to the creator page, There is a file named
+              <b>cdp.data</b> which stores the state of the problem and upon
+              uploading, retrieves the previous state.
+              <div class="video-container">
+                <a
+                  href="https://github.com/omegaup/omegaup/pull/7779"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <video width="600" height="450" controls>
+                    <source
+                      src="https://github.com/user-attachments/assets/054c1cf1-eacb-4261-8dfe-164b8ca982fe"
+                      type="video/mp4"
+                    />
+                  </video>
+                </a>
+              </div>
+            </li>
+          </ol>
+          <br />
+          <h3>Cypress tests:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            After adding necessary features, it was important to make sure that
+            the problem creator page is robust and works the same way as user
+            wants. To make sure, we have implemented some e2e tests using
+            <b>cypress</b> along with jest tests written using
+            <b>Vue test utils (VTU)</b>.
+          </p>
+          <h3>Remaining tasks:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Though the problem creator page is up, we need to test it
+            extensively to find bugs and shortcomings. The next phase of the
+            project (which will be done after GSoC period) will have some
+            interesting features.
+          </p>
+          <ul>
+            <li>
+              <b>Get rid of the Intermediate Zip file:</b> Currently, there's no
+              connection between the problem creator page (frontend) and the
+              backend-database. Our main focus will be to allow users to
+              directly create the problems without downloading and re-uploading
+              zip file. Not only it will remove the zip file, it will also help
+              users modify the draft problem directly which will be stored in
+              the database.
+            </li>
+            <br />
+            <li>
+              <b>Auto-calculate outputs:</b> Currently, while writing the test
+              cases, we need to calculate outputs before we write down the
+              outputs. Alternatively, we can get the test cases output from the
+              omegaUp server by running the code written in the code tab and
+              auto populate the outputs.
+            </li>
+          </ul>
+          <h3>What I have learnt:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            A lot, literally a lottt! Vue, typescript, cypress, PHP, bootstrap,
+            vue test utils, vuex store and the list goes on. I had a very little
+            idea about most of those before, this period of 5 months turned out
+            to be extremely enriching for me. Not only these languages and
+            frameworks, but I also had to dive deeper for the design of the
+            problem creator page which helped me a lot as a developer.
+          </p>
+          <h3>Thanksgiving:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            This project would not have been completed without
+            <a
+              href="https://github.com/pabo99"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Carlos</a
+            >
+            and
+            <a
+              href="https://github.com/carlosabcs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Juan</a
+            >
+            . Thanks to them for their excellent guidance and mentoring
+            throughout. I would also like to thanks
+            <a
+              href="https://github.com/heduenas"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Hugo</a
+            >
+            and
+            <a
+              href="https://github.com/tvanessa"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Vanessa</a
+            >
+            for improvement suggestions on my PRs and merging them.
+            <br />
+            I would also like to thanks my parents and friends for their support
+            throughout. (If you are interested, the character in the background
+            is Itachi from Naruto universe and the quote was by him.)
+          </p>
+          <hr />
+          <div class="center" style="width: 70%">
+            <a
+              href="https://youtu.be/dwv65QSdXSU?si=CeOdErzc_sxogdJW"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="assets/img/yuji.png" alt="Jujutsu Kaisen" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
