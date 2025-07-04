@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sob'25 First Blog</title>
+    <title>Sob'25 Second Blog</title>
     <link
       href="https://fonts.googleapis.com/css?family=Bad Script"
       rel="stylesheet"
@@ -86,53 +86,50 @@
 
     <div class="content">
       <div class="post">
-        <h2 style="font-size: 27px">
-          SoB '25: Diving Deep in the Bitcoin World
-        </h2>
-        <p class="post-meta">Published on May 10, 2025</p>
+        <h2 style="font-size: 27px">SoB '25: Towards Braidpool v1</h2>
+        <p class="post-meta">Published on July 4, 2025</p>
 
         <div class="post-content">
           <p style="font-size: 13pt; justify-content: space-evenly"></p>
           <h3>A little bit about Myself:</h3>
           <p style="font-size: 13pt; justify-content: space-evenly">
-            Hey everyone, I'm Aritra, a senior pursuing Master's degree in
-            Computer Science from Chennai Mathematical Institute. I have
-            completed my B.E. degree in Electrical Engineering from Jadavpur
-            University. I'm passionate about math, physics, and computer
-            science, and I'm currently diving deep into cryptography, bitcoin,
-            and complexity theory. I have done GSoC twice with
+            Hey, I'm Aritra! I'm currently doing my Master's in Computer Science
+            at Chennai Mathematical Institute. I did my Bachelor's in Electrical
+            Engineering from Jadavpur University. I've always been a huge fan of
+            math, physics, and computer science, and right now I'm diving into
+            some cool topics like cryptography, Bitcoin, and complexity theory.
+            <br />I was lucky enough to be part of Google Summer of Code twice –
+            first with
             <a
               href="https://mathesar.org/"
               target="_blank"
               rel="noopener noreferrer"
               >Mathesar</a
             >
-            (2023) and
+            in 2023, and then with
             <a
               href="https://www.omegaup.org/"
               target="_blank"
               rel="noopener noreferrer"
               >omegaUp</a
             >
-            (2024).<br />Besides, I spend my leisure time playing football,
-            watching soccer matches (I'm a Madridista), anime and reading
-            mangas. <br />If you want to know me better, you might want to visit
-            my
+            in 2024.<br />When I'm not coding, you can usually find me playing
+            football, cheering for Real Madrid (¡Hala Madrid!), watching anime,
+            or reading manga. <br />If you want to see more of my work or just
+            say hi, check out my
             <a
               href="https://www.linkedin.com/in/aritra-majumder-juee23/"
               target="_blank"
               rel="noopener noreferrer"
-              >LinkedIn profile</a
+              >LinkedIn</a
             >,
             <a
               href="https://github.com/Aritra8438"
               target="_blank"
               rel="noopener noreferrer"
-              >GitHub profile</a
-            >
-            or go through my <a href="../index.html">portfolio</a>. There you
-            will find numerous ways to get in touch with me. I will be writing
-            more blogs on SoB, you can find them
+              >GitHub</a
+            >, or my <a href="../index.html">portfolio</a>. I'll be posting more
+            about my Summer of Bitcoin journey, so you can find all the updates
             <a
               href="../index.html#blogs"
               target="_blank"
@@ -149,14 +146,311 @@
               style="display: inline-block"
             />
           </div>
-          <h3>To be Updated</h3>
+          <h3>Progress till now</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            It's been quite a journey working on braidpool so far! Before the
+            contribution period, I started with going through the codebase and
+            reading a few relevant papers. Subsequently, I started contributing
+            with a few small issues and PRs and then moved on to the Braidpool
+            V1 implementation. Then I dove into the core encodable trait for the
+            Bead structure, which was pretty crucial for serialization. The
+            consensus data structures and serialization work was probably the
+            most challenging part, as it required understanding how the
+            different components of the pool communicate with each other. <br />
+            I also spent time organizing the codebase by moving tests to their
+            own dedicated file, which makes everything cleaner and easier to
+            maintain. Most recently, I worked on replacing the beadhash system
+            with a more efficient approach using beads and indices, and
+            implemented logic to place beads both above and below the highest
+            work path. Each of these changes builds on the previous ones, and
+            it's really cool to see how the entire system is coming together
+            piece by piece. <br />Currently, Ansh and I are writing the
+            <b>RPC</b> server so that it can handle requests from the frontend
+            for dashboard purpose. <br />Ansh, Abdullah and Mohd are primarily
+            working on P2P, Initial Beads Download and IPC server for cmempoold
+            respectively. You can also check their work by visiting the
+            <a
+              href="https://github.com/braidpool/braidpool/pulls"
+              target="_blank"
+              rel="noopener noreferrer"
+              >pull requests</a
+            >
+            page.
+          </p>
+          <h3>Pull requests</h3>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+                'Segoe UI Emoji';
+            "
+          >
+            <!-- PR Item 1 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/207"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Replace beadhash with beads and indices
+              </a>
+              <span style="font-size: 14px; color: #57606a">#207</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 2 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/199"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Moving the tests to a dedicated file tests.rs
+              </a>
+              <span style="font-size: 14px; color: #57606a">#199</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 3 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/179"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Consensus data structures and serialization
+              </a>
+              <span style="font-size: 14px; color: #57606a">#179</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 4 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/162"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Implement encodable trait for Bead structure
+              </a>
+              <span style="font-size: 14px; color: #57606a">#162</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 5 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/105"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Update rustfmt.yml to target all the branches
+              </a>
+              <span style="font-size: 14px; color: #57606a">#105</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 6 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/88"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Place beads both above and below the highest work path
+              </a>
+              <span style="font-size: 14px; color: #57606a">#88</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+          </ul>
           <br /><br />
-          <h3>To be updated</h3>
-          <h3>To be updated</h3>
-          <br /><br />
+          <h3>Towards the next phase</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            After working on the core data structures and consensus logic, we're
+            now moving into the next exciting phase of the project.
+          </p>
+          <ul style="font-size: 13pt; line-height: 1.8; margin-left: 20px">
+            <li>
+              <strong>Node Architecture Design:</strong> Working on
+              restructuring the Node to better handle communication between
+              different components like the Braid, P2P networking (swarm), and
+              RPC handlers. Uh Oh :-(, what to choose? Message passing channels
+              or shared data structures with mutexes?
+            </li>
+            <li>
+              <strong>Orphan Bead Management:</strong> Implementing proper
+              handling of orphan beads (beads that arrive before their parents)
+              by moving the orphan list outside the Braid data structure. Our
+              main goal is to decouple things in an efficient way.
+            </li>
+            <li>
+              <strong>Stratum v2 Integration:</strong> Starting work on Stratum
+              v2 protocol implementation, which will be a major component for
+              connecting miners to the braidpool network.
+            </li>
+            <li>
+              <strong>Threading and Performance:</strong> Optimizing the
+              multi-threaded architecture. Why? To ensure the Braid data
+              structure can handle multiple readers while maintaining
+              thread-safe writes. We will have a lot of users for sure.
+            </li>
+          </ul>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The discussions with Bob, Ansh, Abdullah and Mohd have been really
+            helpful in understanding the trade-offs between different
+            architectural approaches. Excited to see how all these pieces will
+            come together to create a scalable peer-to-peer mining pool!
+          </p>
+          <p>
+            <b>P.S. </b> The character in the background is <b>Rengoku</b> from
+            <i>Demon Slayer</i>. The character from the gif is
+            <b>Lucilfer</b> from <i>Hunter X Hunter</i>.
+          </p>
+          <br />
           <div style="text-align: center">
             <a
-              href="https://www.youtube.com/watch?v=U8EwbB8uB5U"
+              href="https://youtu.be/qSH8BFUSOso?si=_QlyzBpsCue6ZFxS"
               target="_blank"
               rel="noopener noreferrer"
             >
