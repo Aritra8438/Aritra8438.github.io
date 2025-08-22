@@ -1,0 +1,679 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sob'25 Third Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/luffy.png");
+        background-size: cover;
+        background-position: top center;
+        height: 580px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          position: absolute;
+          left: 20px;
+          top: 20px;
+          font-family: 'Bad Script', sans-serif;
+          color: black;
+        "
+      >
+        "If you don’t take risks, you can’t create a future.”
+      </h1>
+    </div>
+
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">SoB '25: Thanks for everything</h2>
+        <p class="post-meta">Published on August 23, 2025</p>
+
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly"></p>
+          <h3>A little bit about Myself:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hello all, I'm <b>Aritra</b>. (You can refer to these
+            <a href="../#blogs" target="_blank" rel="noopener noreferrer"
+              >blogs</a
+            >
+            to know more about me). Without much introduction, let's dive into
+            what I've been up to this summer and what I will continue working
+            on.
+          </p>
+
+          <h3>Progress till now</h3>
+
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            One of the core components I worked on is the
+            <strong>Braid</strong> data structure, which is the heart of our
+            BlockDAG implementation. Let me show you what it looks like:
+          </p>
+
+          <div
+            style="
+              background: linear-gradient(90deg, #f8ffae 0%, #43c6ac 100%);
+              border-radius: 12px;
+              padding: 24px;
+              margin: 32px 0;
+              box-shadow: 0 4px 16px rgba(67, 198, 172, 0.15);
+            "
+          >
+            <pre
+              style="
+                background: #222;
+                color: #f8ffae;
+                border-radius: 8px;
+                padding: 18px;
+                overflow-x: auto;
+                font-size: 15px;
+                line-height: 1.5;
+                font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+              "
+            >
+<span style="color:#43c6ac;">#[derive(Clone, Debug)]</span>
+<span style="color:#43c6ac;">pub struct</span> <span style="color:#f8ffae;">Braid</span> {
+    <span style="color:#43c6ac;">pub</span> beads: <span style="color:#f8ffae;">Vec&lt;Bead&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> tips: <span style="color:#f8ffae;">HashSet&lt;usize&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> cohorts: <span style="color:#f8ffae;">Vec&lt;Cohort&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> cohort_tips: <span style="color:#f8ffae;">Vec&lt;HashSet&lt;usize&gt;&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> orphan_beads: <span style="color:#f8ffae;">Vec&lt;Bead&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> genesis_beads: <span style="color:#f8ffae;">HashSet&lt;usize&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> bead_index_mapping: <span style="color:#f8ffae;">HashMap&lt;BeadHash, usize&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> parents: <span style="color:#f8ffae;">HashMap&lt;usize, HashSet&lt;usize&gt;&gt;</span>,
+    <span style="color:#43c6ac;">pub</span> children: <span style="color:#f8ffae;">HashMap&lt;usize, HashSet&lt;usize&gt;&gt;</span>,
+}
+
+<span style="color:#43c6ac;">impl</span> <span style="color:#f8ffae;">Braid</span> {
+    <span style="color:#888;">/// Attempts to extend the braid with the given bead.</span>
+    <span style="color:#888;">/// Returns true if the bead successfully extended the braid, false otherwise.</span>
+    <span style="color:#43c6ac;">pub fn</span> <span style="color:#f8ffae;">extend</span>(&amp;<span style="color:#43c6ac;">mut self</span>, bead: &amp;<span style="color:#f8ffae;">Bead</span>) -&gt; <span style="color:#f8ffae;">AddBeadStatus</span> {
+        <span style="color:#888;">// Check if bead already exists</span>
+        <span style="color:#43c6ac;">let</span> bead_hash = bead.block_header.block_hash();
+        <span style="color:#43c6ac;">if</span> <span style="color:#43c6ac;">self</span>.beads.iter().any(|b| b.block_header.block_hash() == bead_hash) {
+            <span style="color:#43c6ac;">return</span> AddBeadStatus::DagAlreadyContainsBead;
+        }
+
+        <span style="color:#888;">// Verify all parents are available</span>
+        <span style="color:#43c6ac;">for</span> parent_hash <span style="color:#43c6ac;">in</span> &amp;bead.committed_metadata.parents {
+            <span style="color:#43c6ac;">if</span> !<span style="color:#43c6ac;">self</span>.bead_index_mapping.contains_key(parent_hash) {
+                <span style="color:#43c6ac;">self</span>.orphan_beads.push(bead.clone());
+                <span style="color:#43c6ac;">return</span> AddBeadStatus::ParentsNotYetReceived;
+            }
+        }
+
+        <span style="color:#888;">// Add bead to the DAG structure</span>
+        <span style="color:#43c6ac;">self</span>.beads.push(bead.clone());
+        <span style="color:#43c6ac;">let</span> new_bead_index = <span style="color:#43c6ac;">self</span>.beads.len() - <span style="color:#f8ffae;">1</span>;
+        <span style="color:#43c6ac;">self</span>.bead_index_mapping.insert(bead_hash, new_bead_index);
+
+        <span style="color:#888;">// Update parent-child relationships</span>
+        <span style="color:#888;">// Update tips (leaf nodes of the DAG)</span>
+        <span style="color:#888;">// Reorganize cohorts for consensus ordering</span>
+        
+        AddBeadStatus::BeadAdded
+    }
+}
+            </pre>
+            <div
+              style="
+                text-align: right;
+                font-size: 13px;
+                color: #333;
+                margin-top: 8px;
+              "
+            >
+              <span
+                style="
+                  background: #43c6ac;
+                  color: #fff;
+                  border-radius: 4px;
+                  padding: 2px 8px;
+                "
+                >Rust</span
+              >
+            </div>
+          </div>
+
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Let me break down what each part of the Braid struct does:
+          </p>
+          <ul style="font-size: 13pt; line-height: 1.8; margin-left: 20px">
+            <li>
+              <strong>beads:</strong> Stores all the beads (weak blocks) in our
+              DAG
+            </li>
+            <li>
+              <strong>tips:</strong> Keeps track of the "leaf nodes" - beads
+              with no children yet
+            </li>
+            <li>
+              <strong>cohorts:</strong> Groups beads that can be processed
+              together for consensus
+            </li>
+            <li>
+              <strong>orphan_beads:</strong> Temporary storage for beads whose
+              parents haven't arrived yet
+            </li>
+            <li>
+              <strong>bead_index_mapping:</strong> Quick lookup from bead hash
+              to its position in the array
+            </li>
+            <li>
+              <strong>parents/children:</strong> Maps showing which beads
+              reference each other
+            </li>
+          </ul>
+
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The <strong>extend</strong> function is where the magic happens.
+            When a new bead arrives, it goes through several checks:
+          </p>
+          <ol style="font-size: 13pt; line-height: 1.8; margin-left: 20px">
+            <li>
+              <strong>Duplicate check:</strong> Make sure we haven't seen this
+              bead before
+            </li>
+            <li>
+              <strong>Parent validation:</strong> Verify all parent beads are
+              already in our DAG
+            </li>
+            <li>
+              <strong>Orphan handling:</strong> If parents are missing, store
+              the bead temporarily
+            </li>
+            <li>
+              <strong>DAG integration:</strong> Add the bead and update all the
+              relationship mappings
+            </li>
+            <li>
+              <strong>Tip management:</strong> Remove parents from tips, add new
+              bead as a tip
+            </li>
+            <li>
+              <strong>Cohort reorganization:</strong> Group beads for proper
+              consensus ordering
+            </li>
+          </ol>
+
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            This design lets us handle beads arriving out of order while
+            maintaining the DAG structure needed for consensus. It's pretty cool
+            how a BlockDAG can handle multiple concurrent chains unlike
+            traditional blockchain! <br />Apart from that, we have also
+            implemented the RPC interface for the frontend client to interact
+            with our DAG.
+          </p>
+          <h3>Pull requests</h3>
+          <ul
+            style="
+              list-style: none;
+              padding: 0;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+                'Segoe UI Emoji';
+            "
+          >
+            <!-- PR Item 1 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/227"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Add json tests for braid::extend()
+              </a>
+              <span style="font-size: 14px; color: #57606a">#227</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 2 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/224"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Updated RPC implementation according to the new structure
+              </a>
+              <span style="font-size: 14px; color: #57606a">#224</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 3 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/225"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Add the logic for orphan beads
+              </a>
+              <span style="font-size: 14px; color: #57606a">#225</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 4 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/207"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Replace beadhash with beads and indices
+              </a>
+              <span style="font-size: 14px; color: #57606a">#207</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 5 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/199"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Moving the tests to a dedicated file tests.rs
+              </a>
+              <span style="font-size: 14px; color: #57606a">#199</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 6 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/179"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Consensus data structures and serialization
+              </a>
+              <span style="font-size: 14px; color: #57606a">#179</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 7 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/162"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Implement encodable trait for Bead structure
+              </a>
+              <span style="font-size: 14px; color: #57606a">#162</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 8 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/105"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Update rustfmt.yml to target all the branches
+              </a>
+              <span style="font-size: 14px; color: #57606a">#105</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+            <!-- PR Item 9 -->
+            <li
+              style="
+                background-color: #f6f8fa;
+                border: 1px solid #e1e4e8;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 16px;
+                transition: all 0.2s ease-in-out;
+              "
+              onmouseover="this.style.boxShadow='0 8px 25px rgba(0,0,0,0.1)'; this.style.transform='translateY(-3px)';"
+              onmouseout="this.style.boxShadow='none'; this.style.transform='none';"
+            >
+              <a
+                href="https://github.com/braidpool/braidpool/pull/88"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="
+                  font-weight: 600;
+                  color: #0969da;
+                  text-decoration: none;
+                  font-size: 18px;
+                  display: block;
+                  margin-bottom: 8px;
+                "
+              >
+                Place beads both above and below the highest work path
+              </a>
+              <span style="font-size: 14px; color: #57606a">#88</span>
+              <span style="display: inline-block; margin: 0 8px; color: #57606a"
+                >•</span
+              >
+              <span style="font-size: 14px; font-weight: 500; color: #8250df"
+                >Merged</span
+              >
+            </li>
+          </ul>
+          <br /><br />
+          <h3>Beyond the Internship</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The internship period has officially ended but we have planned to
+            collaborate to continue improving the project. We still have a lot
+            of work to do. I will briefly explain the key areas I will try to
+            focus on.
+          </p>
+          <ul style="font-size: 13pt; line-height: 1.8; margin-left: 20px">
+            <li>
+              <strong>Implementing Difficulty Adjustment Algorithm:</strong>
+              Currently, we are working on integrating the descendant work and
+              highest work path algorithm so that we can start adding beads to
+              the braid server. But we still need to implement difficulty
+              adjustment algorithm to ensure the network remains stable,
+              efficient and fault tolerant. We also need to explore and test
+              different algorithms for this.
+            </li>
+            <li>
+              <strong>RPC endpoints:</strong> Currently we have a few basic RPC
+              endpoints. But, most of the planned RPC endpoints need us to
+              implement the highest work path and functionality to support them.
+            </li>
+            <li>
+              <strong>Integrating Miners:</strong> We already have dedicated
+              frontend components for miner management, but we need to implement
+              the backend logic to support miner registration, job assignment,
+              and result collection. It's challenging to integrate all kind of
+              miners and we are planning to use PyASIC for this. Our initial
+              plan is to write a LLM based Rust translation and use that in the
+              backend. We also need to register the miners in the braid
+              database.
+            </li>
+            <li>
+              <strong>Optimizing the consensus functions:</strong> After all of
+              these, we need to optimize the consensus functions to ensure they
+              are efficient and can handle high throughput. This might involve
+              refactoring some of the existing code and implementing caching
+              mechanisms. We also need to explore possibilities for further
+              optimization in the descendant work calculation.
+            </li>
+            <li>
+              <strong>Adding tests:</strong> Finally, we need to add
+              comprehensive tests to ensure the reliability and stability of the
+              system. This includes unit tests, integration tests, and
+              end-to-end tests. We want to make sure that all components work
+              together seamlessly and that we can catch any issues early in the
+              development process.
+            </li>
+          </ul>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Really excited to continue working on braidpool and contribute to
+            its success! I am immensely grateful for the opportunity to work
+            with such a talented team and to be a part of this innovative
+            project. Every discussion with Bob, Ansh, Priya, Abhishek, Abdullah
+            and Mohd has been a valuable learning experience. Again, thanks to
+            Adi and Summer of Bitcoin for this opportunity!
+          </p>
+          <p>
+            <b>P.S. </b> The character in the background is
+            <b>Monkey D. Luffy</b> from <i>One Piece</i>. The character below is
+            <b>Portgas D. Ace</b> from <i>One Piece</i> again.
+          </p>
+          <br />
+          <div style="text-align: center">
+            <a
+              href="https://www.youtube.com/watch?v=BlrolMCS33M&list=RDBlrolMCS33M&start_radio=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img width="400px" src="assets/img/ace.jpg" alt="Ace" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
