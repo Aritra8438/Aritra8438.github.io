@@ -1,0 +1,551 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GSoC Preparation</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bad Script"
+      rel="stylesheet"
+    />
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .header {
+        background-image: url("assets/img/luffy.png");
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        width: 850px;
+        margin: auto;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        line-height: 1.6;
+        font-weight: 451;
+      }
+
+      .post-meta {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 20px;
+      }
+
+      .post-content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+      }
+
+      .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1
+        style="
+          color: white;
+          text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+          position: absolute;
+          left: 820px;
+          top: 510px;
+          font-family: 'Bad Script', sans-serif;
+        "
+      >
+        "People's dreams... have no end!"
+      </h1>
+    </div>
+    <div class="content">
+      <div class="post">
+        <h2 style="font-size: 27px">Google Summer of Code: How to Shine?</h2>
+        <p class="post-meta">Published on Dec 6, 2025</p>
+        <div class="post-content">
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Hey everyone, I'm Aritra! I work as an Operations Research Scientist
+            at Lyric. If you're curious about my background, you may head over
+            to my
+            <a
+              href="https://www.linkedin.com/in/aritra-majumder-juee23/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+            and
+            <a
+              href="https://github.com/Aritra8438"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >; if you'd like to know more about my experience and projects or go
+            through all my blogs, please head over to my
+            <a href="../index.html">portfolio</a> where you'll find other blogs
+            and ways to get in touch.
+            <br />
+            <i
+              >I’ve been involved in GSoC for a few years now, as a mentee with
+              Mathesar (2023) and omegaUp (2024), and then mentoring with
+              omegaUp in 2025. You will find all of my GSoC blogs
+              <a href="../#blogs" target="_blank" rel="noopener noreferrer"
+                >here</a
+              >.
+            </i>
+            <br />
+            <i
+              >Got questions or want to say hi? Connect with me on LinkedIn! I
+              also recently opened a
+              <a
+                href="https://topmate.io/aritram/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Topmate account</a
+              >
+              account—if you'd like to support my journey, you can find ways
+              there (but only if you want to and can).</i
+            >
+            <br />
+            <br />
+            <i><b>Why am I writing this blog?</b></i> In this blog, I intend to
+            share all the important information of GSoC which is publicly
+            available but scattered all over the internet in different places.
+            When I first applied for GSoC, I found it hard to understand the
+            process flow and I wish there was a blog where I could find all the
+            information in one place.
+            <u
+              >Please note that this blog is not about tips and strategies to
+              get selected in GSoC. There is no alternative to hard work and
+              dedication.</u
+            >
+            This blog is just to help you understand the process flow of GSoC
+            and prepare accordingly. Apart from that, I will also share a few
+            difficulties I faced and how I overcame them.
+            <br />
+            <br />
+            <i><b>Why may you want to read this blog?</b></i> This blog might
+            give you a clearer understanding of the GSoC process flow and help
+            you with a lot of questions that you might have in your mind
+            regarding GSoC. Clearing them will help you focus on your
+            contributions and project proposal.
+            <br />
+          </p>
+          <hr />
+          <h3>What is GSoC (Google Summer of Code)?</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            Google Summer of Code is a global, online program focused on
+            bringing new contributors into open source software development.
+            GSoC Contributors work with an open source organization on a 12+
+            week programming project under the guidance of mentors. (From the
+            official
+            <a
+              href="https://summerofcode.withgoogle.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GSoC website</a
+            >). <br />
+            A few important points regarding GSoC:
+          </p>
+          <ul>
+            <li>
+              <b>Massive Learning Curve:</b> During the pre-GSoC and GSoC
+              period, you will be able to learn to code like a professional!
+              You'll level up your Git/GitHub skills, learn to collaborate
+              remotely, manage a complex project, and communicate like a pro!
+            </li>
+            <li>
+              <b>Stipend:</b> The programme offers stipends to the selected
+              contributors during the program duration.
+              <a
+                href="https://developers.google.com/open-source/gsoc/help/student-stipends"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Learn more about stipends</a
+              >.
+            </li>
+
+            <li>
+              <b>Eligibility</b>: To participate in the Program, a GSoC
+              Contributor must:
+              <ul>
+                <li>
+                  be eighteen (18) years of age or older upon registration for
+                  the Program;
+                </li>
+                <li>
+                  for the duration of the Program, be eligible to work in the
+                  country in which they reside;
+                </li>
+                <li>
+                  not be an Organization Administrator or Mentor in the Program;
+                  and
+                </li>
+                <li>
+                  be a student or a beginner to open source software
+                  development.
+                </li>
+              </ul>
+              Please visit the
+              <a
+                href="https://summerofcode.withgoogle.com/rules#:~:text=from%20the%20Program.-,gsoc%20contributors,-."
+                target="_blank"
+                rel="noopener noreferrer"
+                >GSoC page</a
+              >
+              for more criteria. In short, you can take part in GSoC twice as a
+              student and participate as a working professional/non-student only
+              if you haven't participated before.
+            </li>
+          </ul>
+          <hr />
+          <h3>GSoC timeline:</h3>
+          <p style="font-size: 13pt; justify-content: space-evenly">
+            The
+            <a
+              href="https://developers.google.com/open-source/gsoc/timeline#2026_timeline"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GSoC timeline</a
+            >
+            is as follows:
+          </p>
+          <ul>
+            <li>
+              January 19 - 18:00 UTC — Mentoring organizations can begin
+              submitting applications to Google
+            </li>
+            <li>
+              February 3 - 18:00 UTC — Mentoring organization application
+              deadline
+            </li>
+            <li>
+              February 3 - 18:00 UTC — Google program administrators review
+              organization applications
+            </li>
+            <li>
+              February 19 - 18:00 UTC — List of accepted mentoring organizations
+              published
+            </li>
+            <li>
+              February 19 - March 15 — Potential GSoC contributors discuss
+              application ideas with mentoring organizations
+            </li>
+            <li>
+              March 16 - 18:00 UTC — GSoC contributor application period begins
+            </li>
+            <li>
+              March 31 - 18:00 UTC — GSoC contributor application deadline
+            </li>
+            <li>
+              April 21 - 18:00 UTC — GSoC contributor proposal rankings due from
+              Org Admins
+            </li>
+            <li>
+              April 30 - 18:00 UTC — Accepted GSoC contributor projects
+              announced
+            </li>
+            <li>
+              May 1 - 24 — Community Bonding Period (contributors get to know
+              mentors, read documentation, get up to speed)
+            </li>
+            <li>May 25 — Coding officially begins</li>
+            <li>
+              July 6 - 18:00 UTC — Mentors and GSoC contributors can begin
+              submitting midterm evaluations (for standard 12 week coding
+              projects)
+            </li>
+            <li>
+              July 10 - 18:00 UTC — Midterm evaluation deadline (standard coding
+              period)
+            </li>
+            <li>
+              July 6 - August 16 — Work Period (GSoC contributors work on their
+              project with guidance from mentors)
+            </li>
+            <li>
+              August 17 - 24 - 18:00 UTC — Final week: contributors submit final
+              work product and final mentor evaluation (standard coding period)
+            </li>
+            <li>
+              August 24 - 31 - 18:00 UTC — Mentors submit final contributor
+              evaluations (standard coding period)
+            </li>
+            <li>
+              August 24 - November 2 — Contributors with extended timelines
+              continue coding
+            </li>
+            <li>
+              November 2 - 18:00 UTC — Final date for all contributors to submit
+              their final work product and final evaluation
+            </li>
+            <li>
+              November 9 - 18:00 UTC — Final date for mentors to submit
+              evaluations for projects with extended deadlines
+            </li>
+          </ul>
+          Let's take a pause and look at the important periods in the timeline.
+          <ol>
+            <li>
+              The mentoring organizations will be announced on February 19. But,
+              considering that the organizations more or less stay the same from
+              year to year, it's a good idea to look at last year's
+              organizations to get an idea of who might participate this year.
+            </li>
+            <li>
+              Once the organizations and the projects are announced, you should
+              start going through the project ideas. Some of the organization
+              typically have a competency test to shortlist candidates, be
+              careful to read the instructions carefully as it depends on the
+              organization. For omegaUp, I had to appear for a coding test
+              before I could submit my proposal.
+            </li>
+            <li>
+              Apart from that, you should also start going through the codebase.
+              It's a good time to raise a few meaningful PRs as they will serve
+              as a very good proof of work while writing your proposal. Don't
+              hesitate to reach out to the mentors if you have any doubts
+              regarding the implementation. In general, you should use public
+              channels (like the organization's IRC/Discord/Slack channels) to
+              ask your questions if not specified otherwise by the organization.
+            </li>
+            <li>
+              You can submit your proposals on the official GSoC site from March
+              16 to March 31. Remember, you can submit up to three proposals,
+              which can be for different organizations or the same one.
+            </li>
+            <li>
+              After submitting your proposals, it's important to stay engaged
+              with the community and be responsive to any feedback or questions
+              from mentors. If you are actively contributing, you should
+              continue doing that. Some of the organizations may also reach out
+              to you for further discussions or interviews. I had to appear for
+              an interview with omegaUp mentors before getting selected.
+            </li>
+            <li>
+              Then, all you have to do is wait for the results! If you have made
+              it this far, congratulations! If not, don't lose hope, you may
+              continue contributing and reapply next year. This way, you will be
+              in a much better position next time.
+            </li>
+          </ol>
+          <hr />
+          <h3>Writing a Proposal:</h3>
+          The proposal is the most important part of your application. A well
+          written proposal can make a huge difference in your chances of being
+          selected. A few things to keep in mind while writing your proposal
+          are:
+          <ul>
+            <li>
+              <b>Do not use LLM to write your proposal.</b> Write it in your own
+              words. It should reflect your understanding of the project and
+              your approach to solving the problems the project presents. You
+              can definitely use LLM to fix grammar and spelling mistakes and
+              improve the readability of your proposal. But, make sure to review
+              the final output.
+            </li>
+            <li>
+              In general, the organizations provide a proposal template and
+              impose certain guidelines. If available, try to follow them
+              closely.
+            </li>
+            <li>
+              It's a good idea to include code blocks to illustrate your points.
+              Besides, you can use flowcharts or diagrams to represent complex
+              ideas visually. I prefer
+              <a
+                href="https://www.lucidchart.com/pages"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Lucidchart</a
+              >
+              for creating diagrams.
+            </li>
+            <li>
+              Highlight your relevant skills and experience. Provide links to
+              your previous work, contributions, or portfolio. If you have
+              already contributed to the organization, make sure to mention that
+              as well.
+            </li>
+            <li>
+              Please plan your timeline carefully. Break down the tasks and
+              milestones clearly. This will also help you manage your time
+              during the coding period (which is often underestimated).
+            </li>
+          </ul>
+          <a
+            href="https://docs.google.com/document/d/1_0oMaABDFRWxA64okNiS9A2VwGdZBuD1RzMg97hu8y0/edit?tab=t.0#heading=h.tti98m861hh8"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Here's</a
+          >
+          a good proposal example from previous year's omegaUp project "AI
+          Teaching Assistant" (submitted by Nandini).
+          <br />
+          Here're few repositories with a lot of proposals from previous years:
+          <ul>
+            <li>
+              <a
+                href="https://github.com/Aritra8438/GSoC_archive"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GSoC_archive</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/SammanSarkar/GSoC_archive_2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GSoC_archive_2025</a
+              >
+            </li>
+          </ul>
+          <hr />
+          <h3>A peek into the selection process:</h3>
+          Once you submit your proposal, the organization admins and mentors
+          will have to review it and rank it based on some metric depending on
+          their requirements. They might ask you for further clarifications or
+          an interview. So, if the organization gets 100 proposals, they can
+          choose to rank all of them or shortlist a few and rank only those.
+          Ideally, if there are multiple proposals with the same project, the
+          organization will rank only one for obvious reasons. Once the ranking
+          is done, the organization will submit the rankings to Google. Now, it
+          completely depends on the GSoC team to decide how many slots an
+          organization gets. If they choose 4, then the first 4 proposals in the
+          shortlist will be selected.
+          <hr />
+          <h3>Additional Resources:</h3>
+          <ul>
+            <li>
+              If you are a complete beginner to open source and git (or version
+              control system, in general), you should definitely learn git (and
+              GitHub) first. Git is an essential tool for open source
+              development enabling you raising PRs and reviewing code.
+              <br />
+              Here're a few resources to get you started:
+              <ul>
+                <li>
+                  <a
+                    href="https://docs.github.com/en/get-started/quickstart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub Quickstart Guide</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.freecodecamp.org/news/git-and-github-for-beginners/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Git and GitHub for Beginners - FreeCodeCamp</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/watch?v=RGOj5yH7evk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Git and GitHub for Beginners - YouTube</a
+                  >
+                </li>
+              </ul>
+              If you're looking for a hands-on Git session and want to support
+              me, you may check out my
+              <a
+                href="https://topmate.io/aritram/1826729?utm_source=public_profile&utm_campaign=aritram"
+                target="_blank"
+                rel="noopener noreferrer"
+                >1:1 service</a
+              >
+              on Topmate.
+            </li>
+            <li>
+              You may also want to take a look at previous years' organizations
+              and their projects and get an idea about the tech stacks they
+              used. You can head over to the following links to find the list of
+              organizations from previous years:
+              <ul>
+                <li>
+                  <a
+                    href="https://summerofcode.withgoogle.com/programs/2025/organizations"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GSoC 2025 Organizations</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.gsocorganizations.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GSoC Organizations over the years</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              While choosing an organization/project, it's completely fine if
+              you don't know all the tech stacks used. You can always learn the
+              rest and ask for help when needed. Sometimes, you might feel like
+              the codebase is too complex to understand. You don't have to
+              understand everything right away; focus on the parts relevant to
+              your project/contributions. Once you get familiar with how things
+              work, you'll soon get enough confidence and grip over the codebase
+              to explore more.
+            </li>
+            <li>
+              In my experience — and while this can vary by organization —
+              submitting a few <b>meaningful</b> PRs might be a huge help. Think
+              of those PRs as your 'proof of work' showing that you understand
+              the codebase well!
+            </li>
+          </ul>
+          <b><i>Wishing you all the best!</i></b>
+          <br />
+          Found a bug/misinformation? I'm sorry, please feel free to ping me or
+          open a pull request to fix it.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
