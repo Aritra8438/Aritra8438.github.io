@@ -148,7 +148,7 @@
               rel="noopener noreferrer"
               >second blog</a
             >
-            of GSoC '24. I also participated in GSoC '23 with Mathesar, you can
+            of GSoC '24. I also participated in GSoC '23 with Mathesar; you can
             find the related blogs <a href="..#blogs">here</a>. <br />In this
             blog, I will share the final progress till now and the future
             plans.<br />
@@ -225,7 +225,7 @@
             the solution.
             <br />
             The problem statement uses the <b>Pagedown</b> editor and on saving
-            (clicking on th save button) directly updates the store. Here is the
+            (clicking on the save button) directly updates the store. Here is the
             video demo of the feature. Click on it to go to the pull request.
           </p>
           <div class="video-container">
@@ -247,8 +247,8 @@
             The problem code tab allows users to upload the intended solution
             code for the problem. While it doesn't have any direct applications
             now, we might add some features like auto-calculating outputs from
-            the inputs on the test-cases tab. The tab supports uploading file
-            and then infer the language based on extension. Besides, user may
+            the inputs on the test-cases tab. The tab supports uploading a file
+            and then infers the language based on extension. Besides, the user may
             select the language and then write the code in the
             <b>Codemirror</b> editor. <br />
             Here is the demo video from the pull request. (Again, click on the
@@ -279,8 +279,8 @@
           </p>
           <ol>
             <li>
-              <b>Sidebar:</b> The sidebar allows user to centrally control all
-              the test cases and the groups. User can view, edit, delete and
+              <b>Sidebar:</b> The sidebar allows the user to centrally control all
+              the test cases and the groups. The user can view, edit, delete and
               download groups and cases from the sidebar.
               <div class="video-container">
                 <a
@@ -300,9 +300,9 @@
             <br /><br />
             <li>
               <b>Case edit tab:</b> This tab allows you to edit a case i.e.
-              adding or modifying lines and add case output. A case consists of
+              adding or modifying lines and adding case output. A case consists of
               lines which might be a single line, multiline, array and matrix.
-              Arrays and matrices gives users a nice abstraction over lines and
+              Arrays and matrices give users a nice abstraction over lines and
               multiline by allowing users to decide sizes, ranges and uniqueness
               of array/matrix elements.
               <div class="video-container">
@@ -364,9 +364,9 @@
                 rel="noopener noreferrer"
                 >manual</a
               >. The problem creator page provides an abstraction over this to
-              improves user experience. After creating the problem using the
+              improve user experience. After creating the problem using the
               problem creator page, the user can download the problem to upload
-              it to omegaUp server.
+              it to the omegaUp server.
               <div class="video-container">
                 <a
                   href="https://github.com/omegaup/omegaup/pull/7702"
@@ -386,7 +386,7 @@
             <li>
               <b>Uploading the zip file:</b> Similarly, if the user wants to
               further modify the problem statement, he/she can re-upload the
-              problem to the creator page, There is a file named
+              problem to the creator page. There is a file named
               <b>cdp.data</b> which stores the state of the problem and upon
               uploading, retrieves the previous state.
               <div class="video-container">
@@ -409,7 +409,7 @@
           <h3>Cypress tests:</h3>
           <p style="font-size: 13pt; justify-content: space-evenly">
             After adding necessary features, it was important to make sure that
-            the problem creator page is robust and works the same way as user
+            the problem creator page is robust and works the same way as the user
             wants. To make sure, we have implemented some e2e tests using
             <b>cypress</b> along with jest tests written using
             <b>Vue test utils (VTU)</b>.
@@ -427,24 +427,24 @@
               connection between the problem creator page (frontend) and the
               backend-database. Our main focus will be to allow users to
               directly create the problems without downloading and re-uploading
-              zip file. Not only it will remove the zip file, it will also help
-              users modify the draft problem directly which will be stored in
+              zip file. Not only will it remove the zip file, it will also help
+              users modify the draft problem directly, which will be stored in
               the database.
             </li>
             <br />
             <li>
               <b>Auto-calculate outputs:</b> Currently, while writing the test
               cases, we need to calculate outputs before we write down the
-              outputs. Alternatively, we can get the test cases output from the
+              outputs. Alternatively, we can get the test cases' output from the
               omegaUp server by running the code written in the code tab and
-              auto populate the outputs.
+              auto-populate the outputs.
             </li>
           </ul>
           <h3>What I have learnt:</h3>
           <p style="font-size: 13pt; justify-content: space-evenly">
             A lot, literally a lottt! Vue, typescript, cypress, PHP, bootstrap,
-            vue test utils, vuex store and the list goes on. I had a very little
-            idea about most of those before, this period of 5 months turned out
+            vue test utils, vuex store and the list goes on. I had very little
+            idea about most of those before; this period of 5 months turned out
             to be extremely enriching for me. Not only these languages and
             frameworks, but I also had to dive deeper for the design of the
             problem creator page which helped me a lot as a developer.
@@ -466,7 +466,7 @@
               >Juan</a
             >
             . Thanks to them for their excellent guidance and mentoring
-            throughout. I would also like to thanks
+            throughout. I would also like to thank
             <a
               href="https://github.com/heduenas"
               target="_blank"
@@ -482,9 +482,9 @@
             >
             for improvement suggestions on my PRs and merging them.
             <br />
-            I would also like to thanks my parents and friends for their support
+            I would also like to thank my parents and friends for their support
             throughout. (If you are interested, the character in the background
-            is Itachi from Naruto universe and the quote was by him.)
+            is Itachi from the Naruto universe and the quote was by him.)
           </p>
           <hr />
           <div class="center" style="width: 70%">
